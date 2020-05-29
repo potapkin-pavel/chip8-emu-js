@@ -53,6 +53,14 @@ class Renderer {
     }
   }
 
+  testRender() {
+    this.setPixel(0, 0);
+    this.setPixel(5, 2);
+    this.setPixel(13, 1);
+    this.setPixel(31, 31);
+    this.setPixel(63, 31);
+  }
+
 }
 
 export default Renderer;
