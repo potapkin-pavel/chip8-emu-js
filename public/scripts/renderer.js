@@ -26,6 +26,10 @@ class Renderer {
     return !this.display[pixelLoc];
   }
 
+  clear() {
+    this.display = new Array(this.cols * this.rows);
+  }
+
 }
 
 export default Renderer;
