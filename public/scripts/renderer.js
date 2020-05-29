@@ -14,6 +14,18 @@ class Renderer {
     this.display = new Array(this.cols * this.rows);
   }
 
+  setPixel(x, y) {
+    if (x > this.cols) x -= this.cols;
+    else if (x < 0) x += this.cols;
+    if (y > this.rows) y -= this.rows;
+    else if (y < 0) y += this.rows;
+
+    let pixelLoc = x + (y * this.cols);
+    this.display[pixelLoc] ^= 1;
+
+    return !this.display[pixelLoc];
+  }
+
 }
 
 export default Renderer;
