@@ -30,6 +30,29 @@ class Renderer {
     this.display = new Array(this.cols * this.rows);
   }
 
+  render() {
+    // Clears the display every render cycle. Typical for a render loop.
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    // Clears the display every render cycle. Typical for a render loop.
+    for(let i = 0; i < this.cols * this.rows; i++) {
+      // Grabs the x position of the pixel based off of `i`
+      let x = (i % this.cols) * this.scale;
+
+      // Grabs the y position of the pixel based off of `i`
+      let y = (i % this.rows) * this.scale;
+
+      // If the value at this.display[i] == 1, then draw a pixel.
+      if (this.display[i]) {
+        // Set the pixel color to black
+        this.ctx.fillStyle = '#000';
+
+        // Place a pixel at position (x, y) with a width and height of scale
+        this.ctx.fillRect(x, y, this.scale, this.scale);
+      }
+    }
+  }
+
 }
 
 export default Renderer;
