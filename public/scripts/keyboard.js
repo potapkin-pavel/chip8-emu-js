@@ -30,6 +30,10 @@ class Keyboard {
     window.addEventListener('keyup', this.onKeyUp.bind(this), false);
   }
 
+  isKeyPressed(keyCode) {
+    return this.keysPressed[keyCode];
+  }
+
 }
 
 export default Keyboard;
