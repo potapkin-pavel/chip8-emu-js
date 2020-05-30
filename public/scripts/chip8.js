@@ -9,7 +9,7 @@ const speaker = new Speaker();
 let loop;
 
 let fps = 60, fpsInterval, startTime, now, then, elapsed;
-
+ 
 function init() {
   fpsInterval = 1000 / 60;
   then = Date.now();
