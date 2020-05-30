@@ -45,6 +45,11 @@ class Keyboard {
     }
   }
 
+  onKeyUp(event) {
+    let key = this.KEYMAP[event.which];
+    this.keysPressed[key] = false;
+  }
+
 }
 
 export default Keyboard;
