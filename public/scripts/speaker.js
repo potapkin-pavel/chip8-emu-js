@@ -13,6 +13,22 @@ class Speaker {
     this.gain.connect(this.finish);
   }
 
+  play(frequency) {
+    if (this.audioCtx && !this.oscillator) {
+      this.oscillator = this.audioCtx.createOscillator();
+
+      // Set the frequency
+      this.oscillator.frequency.setValueAtTime(frequency || 440, this.audioCtx.currentTime);
+
+      // Square wave
+      this.oscillator.type = 'square';
+
+      // Connect the gain and start the sound
+      this.oscillator.connect(this.gain);
+      this.oscillator.start();
+    }
+  }
+
 }
 
 export default Speaker;
